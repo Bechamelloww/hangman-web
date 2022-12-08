@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" type="image/x-icon" href="/Ressources/Images/snowman2.ico">
+    <title>Hangman Web</title>
+</head>
+
+<body class="degrade-radial">
+    <div class="snow">
+
+        {{template "header"}}
+
+        <div id="traineauPL">
+            <img src="../Ressources/Images/Holiday_Freebies_Merry_Christmas.png" id="traineau">
+        </div>
+        <div id="Bonhomme">
+            <a class="myButton" onclick="location.href='/game'">JOUER</a>
+            <div id="BonhommeNeige"></div>
+        </div>
+
+        {{template "footer"}}
+
+    </div>
+
+</body>
+
+</html>

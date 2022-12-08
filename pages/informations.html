@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" type="image/x-icon" href="/Ressources/Images/snowman2.ico">
+    <title>Informations</title>
+</head>
+
+<body class="degrade-radial">
+    <div class="snow">
+        {{template "header"}}
+
+        <div id="InfoTitre">
+            <p>Informations Utiles</p>
+        </div>
+        <div id="InfoTitre">
+            Createurs : MARCONI Eoghan et MARIE Gabriel
+        </div>
+        <div id="InfoMsg">
+            Hangman Web est un jeu de pendu réalisé en Golang à la base,<br> que nous avons dû adapter pour un affichage Web.<br><br>
+        </div>
+        <div id="InfoMsg">Le but du jeu est d'empêcher le Père Noël de se PENDRE.<br>
+        Pour cela, il faut deviner le mot proposé par le jeu.
+        </div>
+        <div id="InfoMsg">Si un mot incorrect (composé de plusieurs lettres)<br>est entré, 2 vies sont perdues.<br><br>
+        Si un lettre est incorrecte, elle s'ajoute à l'historique (en haut à gauche)<br>et 1 vie est perdue.<br>
+
+        </div>
+
+        {{template "footer"}}
+
+    </div>
+</body>
+
+</html>

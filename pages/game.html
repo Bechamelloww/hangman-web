@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" type="image/x-icon" href="/Ressources/Images/snowman2.ico">
+    <title>HANGMAN !</title>
+</head>
+
+<body class="degrade-radial">
+    <div class="snow">
+
+        {{template "header"}}
+
+        {{if eq .Difficulty ""}}
+        {{template "diff"}}
+
+        {{else}}
+
+        {{if and (gt .Attempts 0) (ne .StrWord .StrToFind)}}
+
+        <div class="container">
+            <div class="informations">
+                <div id="Attempts">
+                    Vies<br>{{.Attempts}}
+                </div>
+                <div id="History">
+                    Lettres utilisees :<br>{{.History}}
+                </div>
+                
+                <div id="StrWord">
+                    {{.StrWord}}
+                </div>
+                <div id="HangmanIMG">
+                    
+                </div>
+            </div>
+        </div>
+        <br>
+        <form class="form-group" method="post">
+            <input type="text" name="UserEntry" placeholder="Entrez une lettre/un mot" autocomplete="off"
+                class="form-style">
+            <i class="input-icon uil uil-at"></i><br>
+        </form>
+        <div id="Difficulty">
+            Difficulte : {{.Difficulty}}
+        </div>
+
+        {{else}}
+        {{if eq .StrWord .StrToFind}}
+        <div id="winPL">
+            <img src="../Ressources/Images/ecran win.png" id="win">
+        </div>
+        <div id="Res">
+            <p>Le mot etait : {{.StrWord}}</p>
+        </div>
+            {{template "win"}}
+            {{end}}
+
+        {{if lt .Attempts 1}}
+        <div id="winPL">
+            <img src="../Ressources/Images/ecran lose.png" id="win">
+        </div>
+        <div id="Res">
+            <p>Le mot etait : {{.StrToFind}}</p>
+        </div>
+            {{template "lose"}}
+            {{end}}
+        {{end}} {{end}}
+
+        {{template "footer"}}
+    </div>
+</body>
+
+</html>
